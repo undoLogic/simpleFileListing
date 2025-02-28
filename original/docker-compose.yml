@@ -1,0 +1,16 @@
+# docker-compose.yml
+services:
+  file-listing:
+    # Build the image using the local Dockerfile
+    build: .
+    
+    # Name the container (optional)
+    container_name: file-listing-container
+    
+    # Mount a local folder to /app in the container
+    volumes:
+      - /g/Shared drives/DE HelloFresh Fulfillment Production ProductionPlatform RecipePrinting CA:/app
+
+    # Expose port 8080 on the host
+    ports:
+      - "8080:8080"
